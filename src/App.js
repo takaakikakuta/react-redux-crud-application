@@ -1,8 +1,13 @@
+import React from "react";
+
 function App() {
+  const dom = "Hello World";
   return (
-    <div>
-        <h1>Hello World</h1>
-    </div>
+    <React.Fragment>
+      <h1 className="test">{dom}</h1>
+      <label htmlFor="bar">bar</label>
+
+    </React.Fragment>
   );
 }
 
