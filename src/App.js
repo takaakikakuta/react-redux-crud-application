@@ -1,20 +1,33 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div>
-      <User name={"NoName"}/>
-    </div>
-  );
-}
 
-const User = (props) => {
-  return <div>Hi, I am {props.name} </div>
-}
+const App = () => (<Counter></Counter>)
 
-User.prototype = {
-  name: PropTypes.string
+class Counter extends Component {
+  constructor(props){
+    super(props)
+    this.state = {count: 0}
+  }
+
+  handlePlusButton = () => {
+    const currentCount = this.state.count
+    this.setState({ count: currentCount + 1 })
+  }
+
+  handleMinusButton = () => {
+    const currentCount = this.state.count
+    this.setState({ count: currentCount - 1 })
+  }
+
+  render(){
+    return(
+      <React.Fragment>
+        <div>count : {this.state.count}</div>
+        <button onClick={this.handlePlusButton}>+1</button>
+        <button onClick={this.handleMinusButton}>-1</button>
+      </React.Fragment>
+    )
+  }
 }
 
 export default App;
