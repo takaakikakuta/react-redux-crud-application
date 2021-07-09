@@ -1,14 +1,15 @@
 import React from "react";
 
 function App() {
-  const dom = "Hello World";
   return (
-    <React.Fragment>
-      <h1 className="test">{dom}</h1>
-      <label htmlFor="bar">bar</label>
-
-    </React.Fragment>
+    <div>
+      <User name={"Taro"}/>
+    </div>
   );
+}
+
+const User = (props) => {
+  return <div>Hi, I am {props.name} </div>
 }
 
 export default App;
